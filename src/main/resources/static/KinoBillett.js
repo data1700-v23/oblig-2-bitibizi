@@ -1,5 +1,6 @@
 $(()=>{
     hentKunder();
+    hentFilmer();
 
     $("#kjop").click(event=>{
         event.preventDefault()
@@ -27,6 +28,21 @@ hentKunder=()=>{
 
 }
 
+hentFilmer=()=>{
+    $.get("/hentFilmer", function(filmer){
+        formaterFilmer(filmer);
+    })
+
+}
+
+formaterFilmer=(filmer)=>{
+    let ut=""
+    for(const film of filmer){
+        ut+="<option value='"+film+"'>"+film+"</option>"
+    }
+    $("#film").html(ut)
+}
+
 formaterKunder=(kunder)=>{
     let ut = "<table class='table table-striped'>" + "<tr>" +
         "<th>Velg Film</th><th>Antall</th><th>Fornavn</th><th>Etternavn</th><th>Telefonnr</th><th>Epost</th>" +
@@ -43,6 +59,6 @@ formaterKunder=(kunder)=>{
 
 slett=()=>{
     $.get("/slettKunder", function(){
-        hentKunder;
+        hentKunder();
     })
 }
