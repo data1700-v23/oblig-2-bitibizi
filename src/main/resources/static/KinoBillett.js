@@ -2,17 +2,18 @@ $(()=>{
     hentKunder();
     hentFilmer();
 
-    $("#kjop").click(event=>{
+    $("#kjop").click( event => {
+        console.log(event)
         event.preventDefault()
 
         const Kunder={
 
-            velgFilm: $("#film").val,
-            antall: $("#antall").val,
-            fornavn: $("#fornavn").val,
-            etternavn: $("#etternavn").val,
-            telefonnr: $("#tlf").val,
-            epost: $("#epost").val
+            velgFilm: $("#film").val(),
+            antall: $("#antall").val(),
+            fornavn: $("#fornavn").val(),
+            etternavn: $("#etternavn").val(),
+            telefonnr: $("#tlf").val(),
+            epost: $("#epost").val()
         }
 
         $.post("/lagreKunder", Kunder, function(){

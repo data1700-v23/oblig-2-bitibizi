@@ -24,45 +24,46 @@
                     <label for="film">Velg film:</label>
                     <select id="film">
                     </select>
-                    <label id="feilFilm" for="film" class="error">Må velge film</label>
+
                 </div>
 
                 <div class="form-group">
                     <label for="antall">Antall</label>
                     <input type="text" id="antall" size="1"/>
-                    <label id="feilAntall" for="antall" class="error">Må skrive noe inn i antall</label>
+
                 </div>
                 <div class="form-group">
                     <label for="fornavn" class="info">Fornavn</label>
                     <input type="text" id="fornavn"/>
-                    <label id="feilFornavn" class="error">Må skrive noe inn i fornavnet</label>
+
                 </div>
                 <div class="form-group">
                     <label for="etternavn" class="info">Etternavn</label>
                     <input type="text" id="etternavn"/>
-                    <label id="feilEtternavn" class="error">Må skrive noe inn etternavnet</label>
+
                 </div>
                 <div class="form-group">
                     <label for="tlf" class="info">Telefonnr</label>
                     <input type="text" id="tlf"/>
-                    <label id="feiltlf" class="error">Må skrive noe inn i telefonnr</label>
+
                 </div>
                 <div class="form-group">
                     <label for="epost" class="info">Epost</label>
                     <input type="text" id="epost"/>
-                    <label id="feilepost" class="error">Må skrive noe inn i epost</label>
+
                 </div>
 
 
-                <button class="btn btn-primary"  id="kjop">Kjøp billett</button>
+                <button class="btn btn-primary"  id="kjop" type="button">Kjøp billett</button>
 
             </form>
 
         </div>
         <div class="col-md-8">
             <h2>Alle billetter</h2>
+            <table class="table">
             <div id="visbillett"></div>
-
+            </table>
             <button class="btn btn-danger" onclick="slett()">Slett alle billettene</button>
         </div>
     </div>
