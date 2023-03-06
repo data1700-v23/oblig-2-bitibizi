@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <script src="KinoBillett.js"></script>
+    <style>
+        label{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h1>Bestilling av kinobilleter</h1>
+            <form class="form">
+
+                <div class="form-group">
+                    <label for="film">Velg film:</label>
+                    <select id="film">
+                        <option>Velg film her</option>
+                        <option>Harry potter</option>
+                        <option>Paddington</option>
+                        <option>Parasite</option>
+                    </select> <label id="feilFilm" for="film" class="error">Må velge film</label>
+                </div>
+
+                <div class="form-group">
+                    <label for="antall">Antall</label>
+                    <input type="text" id="antall" size="1"/>
+                    <label id="feilAntall" for="antall" class="error">Må skrive noe inn i antall</label>
+                </div>
+                <div class="form-group">
+                    <label for="fornavn" class="info">Fornavn</label>
+                    <input type="text" id="fornavn"/>
+                    <label id="feilFornavn" class="error">Må skrive noe inn i fornavnet</label>
+                </div>
+                <div class="form-group">
+                    <label for="etternavn" class="info">Etternavn</label>
+                    <input type="text" id="etternavn"/>
+                    <label id="feilEtternavn" class="error">Må skrive noe inn etternavnet</label>
+                </div>
+                <div class="form-group">
+                    <label for="tlf" class="info">Telefonnr</label>
+                    <input type="text" id="tlf"/>
+                    <label id="feiltlf" class="error">Må skrive noe inn i telefonnr</label>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="info">Epost</label>
+                    <input type="text" id="email"/>
+                    <label id="feilepost" class="error">Må skrive noe inn i epost</label>
+                </div>
+
+
+                <button class="btn btn-primary"  onclick="kjop()">Kjøp billett</button>
+
+            </form>
+
+        </div>
+        <div class="col-md-8">
+            <h2>Alle billetter</h2>
+            <div id="visbillett"></div>
+
+            <button class="btn btn-danger" onclick="slett()">Slett alle billettene</button>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
