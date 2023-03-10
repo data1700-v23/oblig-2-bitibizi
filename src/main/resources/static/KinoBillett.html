@@ -6,11 +6,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <script src="KinoBillett.js"></script>
-    <style>
-        label{
-            display: block;
-        }
-    </style>
+    <script src="InnputValidering.js"></script>
+
 </head>
 <body>
 
@@ -22,39 +19,40 @@
 
                 <div class="form-group">
                     <label for="film">Velg film:</label>
-                    <select id="film">
+                    <select id="film"  onchange="validerFilm(this.value)">
                     </select>
+                    <span id="feilFilm" style="color:red"></span>
 
                 </div>
 
                 <div class="form-group">
                     <label for="antall">Antall</label>
-                    <input type="text" id="antall" size="1"/>
-
+                    <input type="text" id="antall" size="1" onchange="validerAntall(this.value)"/>
+                    <span id="feilAntall" style="color:red"></span>
                 </div>
                 <div class="form-group">
                     <label for="fornavn" class="info">Fornavn</label>
-                    <input type="text" id="fornavn"/>
-
+                    <input type="text" id="fornavn" onchange="validerFornavn(this.value)"/>
+                    <span id="feilFornavn" style="color:red"></span>
                 </div>
                 <div class="form-group">
                     <label for="etternavn" class="info">Etternavn</label>
-                    <input type="text" id="etternavn"/>
-
+                    <input type="text" id="etternavn" onchange="validerEtternavn(this.value)"/>
+                    <span id="feilEtternavn" style="color:red"></span>
                 </div>
                 <div class="form-group">
                     <label for="tlf" class="info">Telefonnr</label>
-                    <input type="text" id="tlf"/>
-
+                    <input type="text" id="tlf" onchange="validerTlf(this.value)"/>
+                    <span id="feilTlf" style="color:red"></span>
                 </div>
                 <div class="form-group">
                     <label for="epost" class="info">Epost</label>
-                    <input type="text" id="epost"/>
-
+                    <input type="text" id="epost" onchange="validerEpost(this.value)"/>
+                    <span id="feilEpost" style="color:red"></span>
                 </div>
 
 
-                <button class="btn btn-primary"  id="kjop" type="button">Kjøp billett</button>
+                <button class="btn btn-primary"  id="validerOgLagreKunder" type="button">Kjøp billett</button>
 
             </form>
 
