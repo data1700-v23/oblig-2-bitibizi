@@ -37,13 +37,12 @@ lagreKunder = () => {
         hentKunder();
     })
 
-    $("#film").val(""),
-        $("#antall").val(""),
-        $("#fornavn").val(""),
-        $("#etternavn").val(""),
-        $("#tlf").val(""),
-        $("#epost").val("")
-
+    $("#film").val("feil")
+    $("#antall").val("")
+    $("#fornavn").val("")
+    $("#etternavn").val("")
+    $("#tlf").val("")
+    $("#epost").val("")
 
 }
 
@@ -70,6 +69,8 @@ formaterFilmer = (filmer) => {
         ut += "<option value='" + film + "'>" + film + "</option>"
     }
     $("#film").html(ut)
+
+
 }
 
 formaterKunder = (kunder) => {

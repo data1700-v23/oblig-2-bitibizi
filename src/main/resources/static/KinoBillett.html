@@ -4,63 +4,100 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <script src="KinoBillett.js"></script>
     <script src="InnputValidering.js"></script>
+    <style>
+        h1 {
+            padding-bottom: 3vh;
+            padding-top: 3vh;
+        }
+
+        h2 {
+            padding-bottom: 3vh;
+            padding-top: 3vh;
+        }
+    </style>
 
 </head>
 <body>
 
 <div class="container">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-5">
             <h1>Bestilling av kinobilleter</h1>
             <form class="form">
 
-                <div class="form-group">
-                    <label for="film">Velg film:</label>
-                    <select id="film"  onchange="validerFilm(this.value)">
-                    </select>
-                    <span id="feilFilm" style="color:red"></span>
+                <div class="form-group row">
+                    <label for="film" class="col-sm-3 col-form-label">Velg film:</label>
+
+                    <div class="col-sm-5"><select id="film" class="form-control" onchange="validerFilm(this.value)">
+                    </select></div>
+                    <div class="col-sm-4">
+                        <span id="feilFilm" style="color:red"></span>
+                    </div>
 
                 </div>
 
-                <div class="form-group">
-                    <label for="antall">Antall</label>
-                    <input type="text" id="antall" size="1" onchange="validerAntall(this.value)"/>
-                    <span id="feilAntall" style="color:red"></span>
+                <div class="form-group row">
+                    <label for="antall" class="col-sm-3 col-form-label">Antall</label>
+                    <div class="col-sm-5"><input type="text" id="antall" class="form-control"
+                                                 onchange="validerAntall(this.value)"/>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <span id="feilAntall" style="color:red"></span>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="fornavn" class="info">Fornavn</label>
-                    <input type="text" id="fornavn" onchange="validerFornavn(this.value)"/>
-                    <span id="feilFornavn" style="color:red"></span>
+                <div class="form-group row">
+                    <label for="fornavn" class="col-sm-3 col-form-label">Fornavn</label>
+                    <div class="col-sm-5"><input type="text" id="fornavn" class="form-control"
+                                                 onchange="validerFornavn(this.value)"/>
+                    </div>
+                    <div class="col-sm-4">
+                        <span id="feilFornavn" style="color:red"></span>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="etternavn" class="info">Etternavn</label>
-                    <input type="text" id="etternavn" onchange="validerEtternavn(this.value)"/>
-                    <span id="feilEtternavn" style="color:red"></span>
-                </div>
-                <div class="form-group">
-                    <label for="tlf" class="info">Telefonnr</label>
-                    <input type="text" id="tlf" onchange="validerTlf(this.value)"/>
-                    <span id="feilTlf" style="color:red"></span>
-                </div>
-                <div class="form-group">
-                    <label for="epost" class="info">Epost</label>
-                    <input type="text" id="epost" onchange="validerEpost(this.value)"/>
-                    <span id="feilEpost" style="color:red"></span>
+                <div class="form-group row">
+                    <label for="etternavn" class="col-sm-3 col-form-label">Etternavn</label>
+                    <div class="col-sm-5"><input type="text" id="etternavn" class="form-control"
+                                                 onchange="validerEtternavn(this.value)"/>
+                    </div>
+                    <div class="col-sm-4">
+                        <span id="feilEtternavn" style="color:red"></span>
+                    </div>
                 </div>
 
+                <div class="form-group row">
+                    <label for="tlf" class="col-sm-3 col-form-label">Telefonnr</label>
+                    <div class="col-sm-5"><input type="text" id="tlf" class="form-control"
+                                                 onchange="validerTlf(this.value)"/>
+                    </div>
+                    <div class="col-sm-4">
+                        <span id="feilTlf" style="color:red"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="epost" class="col-sm-3 col-form-label">Epost</label>
 
-                <button class="btn btn-primary"  id="validerOgLagreKunder" type="button">Kjøp billett</button>
+                    <div class="col-sm-5"><input type="text" id="epost" class="form-control"
+                                                 onchange="validerEpost(this.value)"/></div>
+                    <div class="col-sm-4">
+                        <span id="feilEpost" style="color:red"></span>
+                    </div>
+                </div>
 
+                <div class="pt-3">
+                    <button class="btn btn-primary" id="validerOgLagreKunder" type="button">Kjøp billett</button>
+                </div>
             </form>
 
         </div>
-        <div class="col-md-8">
+        <div class="col-md-7">
             <h2>Alle billetter</h2>
             <table class="table">
-            <div id="visbillett"></div>
+                <div id="visbillett"></div>
             </table>
             <button class="btn btn-danger" onclick="slett()">Slett alle billettene</button>
         </div>

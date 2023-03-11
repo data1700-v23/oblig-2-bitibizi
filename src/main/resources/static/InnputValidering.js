@@ -1,6 +1,5 @@
 validerFilm=(film)=>{
-
-console.log(feil)
+    const feil = "feil"
     if(film===feil){
         $("#feilFilm").html("Må velge film")
         return false;
@@ -11,9 +10,11 @@ console.log(feil)
 }
 
 validerAntall=(antall)=>{
-    const feil ="";
-    if(feil===antall){
-        $("#feilAntall").html("Må fylles inn");
+   const regexp=/^[1-9]+[0-9]*$/;
+    const ok =regexp.test(antall);
+
+    if(!ok){
+        $("#feilAntall").html("Må fylles med tall");
         return false
     }
     else{
@@ -46,8 +47,8 @@ validerEtternavn=(etternavn)=>{
 }
 validerTlf=(telefon)=>{
     const feil ="";
-    if(feil===telefon){
-        $("#feilTlf").html("Må fylles inn");
+    if(feil===telefon || isNaN(telefon)){
+        $("#feilTlf").html("Må fylles med tall");
         return false
     }
     else{
