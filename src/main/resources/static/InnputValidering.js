@@ -12,7 +12,6 @@ validerFilm=(film)=>{
 validerAntall=(antall)=>{
    const regexp=/^[1-9]+[0-9]*$/;
     const ok =regexp.test(antall);
-
     if(!ok){
         $("#feilAntall").html("Må fylles med tall");
         return false
@@ -24,9 +23,10 @@ validerAntall=(antall)=>{
 }
 
 validerFornavn=(fornavn)=>{
-    const feil ="";
-    if(feil===fornavn){
-        $("#feilFornavn").html("Må fylles inn");
+    const regexp=/^[a-zA-ZæøåÆØÅ \-]{2,20}$/
+    const ok=regexp.test(fornavn)
+    if(!ok){
+        $("#feilFornavn").html("Må fylles inn med bokstav");
         return false
     }
     else{
@@ -35,9 +35,10 @@ validerFornavn=(fornavn)=>{
     }
 }
 validerEtternavn=(etternavn)=>{
-    const feil ="";
-    if(feil===etternavn){
-        $("#feilEtternavn").html("Må fylles inn");
+    const regexp=/^[a-zA-ZæøåÆØÅ \-]{2,20}$/
+    const ok=regexp.test(etternavn)
+    if(!ok){
+        $("#feilEtternavn").html("Må fylles inn med bokstav");
         return false
     }
     else{
@@ -57,9 +58,10 @@ validerTlf=(telefon)=>{
     }
 }
 validerEpost=(epost)=>{
-    const feil ="";
-    if(feil===epost){
-        $("#feilEpost").html("Må fylles inn");
+    const regexp=/^[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}$/
+    const ok=regexp.test(epost)
+    if(!ok){
+        $("#feilEpost").html("Må være gyldig epost");
         return false
     }
     else{
