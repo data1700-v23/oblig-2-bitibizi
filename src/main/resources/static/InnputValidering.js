@@ -47,10 +47,11 @@ validerEtternavn=(etternavn)=>{
     }
 }
 validerTlf=(telefon)=>{
-    const feil ="";
-    if(feil===telefon || isNaN(telefon)){
-        $("#feilTlf").html("Må fylles med tall");
-        return false
+    const regexp=/^[0-9]{8}$/
+    const ok=regexp.test(telefon)
+    if(!ok){
+        $("#feilTlf").html("Skriv riktig tlf nummeret. Det er mangel på tall eller mer tall");
+        return false;
     }
     else{
         $("#feilTlf").html("");
