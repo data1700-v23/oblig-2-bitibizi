@@ -38,8 +38,6 @@ public class Controller {
         return filmer;
     }
 
-
-
     @GetMapping("slettKunder")
     public void slettKunder(){
         alleKunder.clear();
