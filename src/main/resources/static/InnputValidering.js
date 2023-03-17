@@ -50,7 +50,7 @@ validerTlf=(telefon)=>{
     const regexp=/^[0-9]{8}$/
     const ok=regexp.test(telefon)
     if(!ok){
-        $("#feilTlf").html("Skriv riktig tlf nummeret. Det er mangel på tall eller mer tall");
+        $("#feilTlf").html("Må være 8 siffer");
         return false;
     }
     else{
